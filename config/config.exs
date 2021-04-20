@@ -10,10 +10,14 @@ use Mix.Config
 config :inmana,
   ecto_repos: [Inmana.Repo]
 
+config :inmana, Inmana.Repo,
+  migration_primary_key: [type: :binary_id],
+  migration_foreign_key: [type: :binary_id]
+
 # Configures the endpoint
 config :inmana, InmanaWeb.Endpoint,
   url: [host: "localhost"],
-  secret_key_base: "9eTCACgOQe3T6K4YXtmeoU00aOYgar9v09fkD+fdkPXgs0hAIrwFq5Jc97J1ccCO",
+  secret_key_base: "9eTCACgOQe3T6K4YXtmeoU00aOYgar9v09fkD+fdkPXgs0hAIrwFq5Jc97inmanaJ1ccCO",
   render_errors: [view: InmanaWeb.ErrorView, accepts: ~w(json), layout: false],
   pubsub_server: Inmana.PubSub,
   live_view: [signing_salt: "Bs+W4tEd"]
